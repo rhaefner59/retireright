@@ -1,5 +1,10 @@
 import streamlit as st
 from datetime import date
+import streamlit as st
+from datetime import date
+from core.schema import Profile, Inputs, Assumptions
+from core.projection import run
+
 from core.schema import Profile, Inputs, Assumptions
 from core.projection import run
 
