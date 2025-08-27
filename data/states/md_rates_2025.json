@@ -1,0 +1,23 @@
+{
+  "state_code": "MD",
+  "rules_version": "2025.v1",
+  "state_effective_rate": 0.0475,
+  "counties": {
+    "Anne Arundel": {
+      "local_effective_rate": 0.0281
+    },
+    "Baltimore County": {
+      "local_effective_rate": 0.032
+    },
+    "Montgomery": {
+      "local_effective_rate": 0.032
+    }
+  },
+  "senior_deduction_per65": 6000,
+  "senior_extra_per65": 1200,
+  "senior_credit": {
+    "agi_cap": 150000,
+    "one65": 1000,
+    "both65": 1750
+  }
+}
