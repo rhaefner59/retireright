@@ -1,21 +1,18 @@
 # core/taxes_states/registry.py
-# Registry of state-specific tax calculators
+# Simple registry that returns a state tax function.
 
 from . import generic
-from . import md
+from . import md  # Maryland
 
+# Map state codes to the function that computes that state's tax.
 REGISTRY = {
-    "GENERIC": generic,
-    "MD": md,
+    "MD": md.compute_state_tax,
 }
-
 
 def get_state_calculator(state_code: str):
     """
-    Look up a state calculator module by its code.
-    Falls back to GENERIC if not found.
+    Return the state-specific tax function if present;
+    otherwise fall back to the generic calculator.
     """
-    mod = REGISTRY.get(state_code.upper())
-    if not mod:
-        mod = REGISTRY["GENERIC"]
-    return mod
+    sc = (state_code or "").upper()
+    return REGISTRY.get(sc, generic.compute_state_tax)
