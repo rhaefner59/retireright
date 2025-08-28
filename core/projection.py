@@ -57,7 +57,10 @@ def ss_taxable_mfj(ss_total: float, provisional: float, base: float = 32_000, ad
 # ---------------------------
 # Projection.run
 # ---------------------------
-def run(profile: Profile, inputs: Inputs, assumptions: Assumptions) -> Dict[str, Any]:
+def run(profile: Profile, inputs: Inputs, assumptions: Assumptions,
+        state_rate: float | None = None, local_rate: float | None = None,
+        senior_bill_on: bool = True, round_whole: bool = True) -> Dict[str, Any]:
+
     """
     Returns: {"table": DataFrame}
     Columns include:
