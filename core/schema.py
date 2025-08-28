@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from typing import Optional, Dict, List
 
+
 @dataclass
 class Profile:
     filing_status: str
@@ -8,6 +9,7 @@ class Profile:
     spouse_dob: Optional[str]
     state: str
     county: Optional[str]
+
 
 @dataclass
 class Inputs:
@@ -21,6 +23,7 @@ class Inputs:
     include_roth_in_fixed: bool
     conversions: Dict
     social_security: Dict
+
 
 @dataclass
 class Assumptions:
